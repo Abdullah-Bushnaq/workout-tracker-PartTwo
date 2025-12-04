@@ -1,0 +1,80 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<header>
+    <h1>Workout Tracker</h1>
+
+    <div class="menu">
+        <a href="/Home/Index">Home</a> |
+        <a href="/Account/Login">Login</a> |
+        <a href="/Account/Signup">Signup</a> |
+        <a href="/Home/About">About</a>
+    </div>
+</header>
+
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <div class="container-flex">
+        <figure>
+            <img src="~/images/AboutUs.png" width="120" usemap="#aboutMap">
+            <map name="aboutMap">
+                <area shape="rect" coords="0,0,120,120" href="/Home/About" alt="About Us">
+            </map>
+            <figcaption>About Us</figcaption>
+        </figure>
+
+        <form id="loginForm" method="post" action="/Account/Login" onsubmit="return validateLogin()">
+            <fieldset>
+                <legend>Login to your account</legend>
+
+                <label>
+                    Email:<br>
+                    <input type="email" id="email" name="Email" placeholder="example@gmail.com">
+                </label>
+                <br>
+                <br>
+
+                <label>
+                    Password:<br>
+                    <input type="password" id="password" name="Password"placeholder="Enter your password">
+                </label>
+                <br>
+                <br>
+
+                <input type="submit" value="Login">
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+
+<p id="loginMsg"></p>
+
+<script>
+    function validateLogin() {
+
+        var email = document.getElementById("email").value;
+        var pass  = document.getElementById("password").value;
+
+        if (email == "") {
+            alert("Email cannot be empty.");
+            return false;
+        }
+
+        if (pass == "") {
+            alert("Password cannot be empty.");
+            return false;
+        }
+
+        if (pass.length < 6) {
+            alert("Password must be at least 6 characters.");
+            return false;
+        }
+
+        alert("Login successful!");
+        return true;
+    }
+</script>

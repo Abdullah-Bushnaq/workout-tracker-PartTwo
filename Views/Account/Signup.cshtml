@@ -1,0 +1,78 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<header>
+    <h1>Workout Tracker</h1>
+
+    <div class="menu">
+        <a href="/Home/Index">Home</a> |
+        <a href="/Account/Login">Login</a> |
+        <a href="/Account/Signup">Signup</a> |
+        <a href="/Home/About">About</a>
+    </div>
+</header>
+
+
+<div class="signup-box">
+    <h2>Create Account</h2>
+    <div class="container-flex">
+
+        <figure>
+            <img src="~/images/AboutUs.png" width="120" usemap="#aboutMap">
+            <map name="aboutMap">
+                <area shape="rect" coords="0,0,120,120" href="/Home/About" alt="About Us">
+            </map>
+            <figcaption>About Us</figcaption>
+        </figure>
+
+        <form id="signupForm" method="post" action="/Account/Signup" onsubmit="return validateSignUp()">
+            <fieldset>
+                <legend>Signup Details</legend>
+
+                <label>
+                    Full Name:
+                    <input type="text" id="fullname" name="FullName" placeholder="Your full name">
+                </label>
+                <br>
+                <br>
+
+                <label>
+                    Email:
+                    <input type="email" id="email" name="Email" placeholder="example@gmail.com">
+                </label>
+                <br>
+                <br>
+
+                <label>
+                    Phone Number:
+                    <input type="tel" id="phone" name="Phone" placeholder="05xxxxxxxx">
+                </label>
+                <br>
+                <br>
+
+                <label>
+                    Password:
+                    <input type="password" id="password" name="Password" placeholder="Enter password">
+                </label>
+                <br>
+                <br>
+
+                <label>
+                    Confirm Password:
+                    <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Re-enter password">
+                </label>
+                <br>
+                <br>
+
+                <input type="submit" value="Create Account">
+            </fieldset>
+        </form>
+
+    </div>
+    <p style="text-align:center; margin-top:10px;">
+        Already have an account? <a href="login.html">Login</a>
+    </p>
+</div>
+
+<script src="~/js/script.js"></script>

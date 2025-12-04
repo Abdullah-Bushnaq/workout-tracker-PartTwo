@@ -1,0 +1,26 @@
+﻿@model workout_tracker.Models.UserModel
+
+@{
+    ViewData["Title"] = "Login Success";
+}
+
+<div class="container mt-5 text-center">
+    <h2 class="text-success mb-4">Login Successful</h2>
+
+    <p class="lead">
+        Welcome back,
+        @if (!string.IsNullOrEmpty(Model.FullName))
+        {
+            @Model.FullName
+        }
+        else
+        {
+            @Model.Email
+        }
+!
+    </p>
+
+    <p>Your email: @Model.Email</p>
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Back to Home</a>
+</div>

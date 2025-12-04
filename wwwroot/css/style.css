@@ -1,0 +1,145 @@
+body {    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial;
+    background-color: #8bb2bc;
+}
+
+header {
+    text-align: center;
+}
+
+.menu a {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+
+figure {
+    border: 2px solid black;
+    padding: 5px;
+    width: fit-content;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+table, .info-box, figure {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+    background: #5f919e;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+figure {
+    z-index: 3;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+
+.internal-menu ol {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.internal-menu a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.internal-menu a:hover {
+    color: #e2b11d;
+}
+
+article {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+}
+.container-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+.container-flex figure {
+    flex: 1;
+    text-align: center;
+}
+.container-flex form {
+    flex: 2;
+}
+
+/*Was INTERNAL CSS inside home.html before be Index.html */
+.info-box {
+    border-radius: 10px;
+    width: 70%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #020202;
+    background-color: #ffffff;
+}
+/* Was INTERNAL CSS inside About.html */
+.about-box {
+    width: 70%;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Was INTERNAL CSS inside Login.html */
+.login-box {
+    width: 60%;
+    margin: 30px auto;
+    background: #5f919e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+    .login-box h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+/* Was INTERNAL CSS inside Signup.html */
+.signup-box {
+    width: 60%;
+    margin: 30px auto;
+    background: #5f919e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+    .signup-box h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-bottom: 2px solid #333;
+}

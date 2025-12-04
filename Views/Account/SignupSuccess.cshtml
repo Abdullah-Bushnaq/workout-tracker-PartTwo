@@ -1,0 +1,17 @@
+﻿@model workout_tracker.Models.UserModel
+
+@{
+    ViewData["Title"] = "Signup Success";
+}
+
+<h2>Signup Successful</h2>
+
+<p>Thank you for signing up, @Model.FullName!</p>
+
+<p>Your email: @Model.Email</p>
+<p>Your phone: @Model.Phone</p>
+
+<p>
+    <a href="/Account/Login">Go to Login</a> |
+    <a href="/Home/Index">Back to Home</a>
+</p>

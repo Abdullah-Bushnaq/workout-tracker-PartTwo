@@ -1,0 +1,191 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<header>
+    <h1>Workout Tracker</h1>
+
+    <div class="menu">
+        <a href="/Home/Index">Home</a> |
+        <a href="/Account/Login">Login</a> |
+        <a href="/Account/Signup">Signup</a> |
+        <a href="/Home/About">About</a>
+    </div>
+</header>
+
+
+<div class="internal-menu">
+    <ol>
+        <li><a href="#CommonEX">Go to Common Exercises</a></li>
+        <li><a href="#AddWorkout">Go to Add Workout</a></li>
+        <li><a href="#WorkoutT">Go to Workout Table</a></li>
+    </ol>
+</div>
+
+
+
+<div class="info-box">
+    <p>
+        This website is a simple Workout Tracker that helps users record their daily exercises.
+        The user can add the name of the exercise, the number of reps or sets, and other details.
+        All added exercises will appear in a small table on the same page.
+        The goal of this website is to make it easier for people to keep track of their workouts.
+    </p>
+</div>
+
+
+
+<figure>
+    <img src="~/images/AboutUs.png" width="120" usemap="#aboutMap">
+
+    <map name="aboutMap">
+        <area shape="rect" coords="0,0,120,120" href="about.html" alt="About Us">
+    </map>
+
+    <figcaption>Click Here</figcaption>
+</figure>
+<br>
+
+
+<article id="CommonEX">
+    <section>
+        <h3>Common Exercises</h3>
+        <ul>
+            <li>
+                Push Exercises
+                <ul>
+                    <li> PushUps </li>
+                    <li> Dimond PushUps </li>
+                </ul>
+            </li>
+
+            <li>
+                Pull Exercises
+                <ul>
+                    <li>Pull up</li>
+                    <li>High pull up</li>
+                    <li>MuscleUp</li>
+                </ul>
+            </li>
+            <li>Running</li>
+            <li>Planks</li>
+        </ul>
+    </section>
+</article>
+<br>
+
+<article id="WorkoutT">
+    <section>
+        <h3>Workout Table</h3>
+
+        <table id="workoutTable" border="1" cellpadding="8">
+            <tr>
+                <th>Exercise</th>
+                <th>Reps/Sets</th>
+                <th>Rest Time</th>
+            </tr>
+            <tr>
+                <td>Push Ups</td>
+                <td>3 x 12</td>
+                <td>30 sec</td>
+            </tr>
+            <tr>
+                <td>Squats</td>
+                <td>3 x 15</td>
+                <td>1:30 min</td>
+            </tr>
+        </table>
+    </section>
+</article>
+
+<article id="AddWorkout">
+    <section>
+
+        <form class="form" onsubmit="return addExercise()">
+            <fieldset>
+                <legend>Add Your Exercise</legend>
+                <label>Exercise Name: <input type="text" id="exName" placeholder="Plank..."> </label>
+                <br>
+                <br>
+
+                <label>Reps / Sets: <input type="text" id="exReps" placeholder="2 x 5"> </label>
+                <br>
+                <br>
+                <label>Rest Time: <input type="text" id="exRest" placeholder="30 sec"> </label>
+                <br>
+                <br>
+
+                <input type="submit" value="Add Exercise">
+                <input type="reset" value="Reset" onclick="clearTable()">
+
+            </fieldset>
+        </form>
+    </section>
+
+</article>
+
+
+
+
+<article id="DailyFeeling">
+    <form class="form">
+        <fieldset>
+            <legend>How was your workout today?</legend>
+
+            <label><input type="radio" name="mood" value="great">Great</label>
+            <br>
+
+            <label><input type="radio" name="mood" value="okay">Okay</label>
+            <br>
+
+            <label><input type="radio" name="mood" value="tired">not bad</label>
+            <br>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>What sports have you tried before</legend>
+            <label><input type="checkbox" name="sport" value="calisthenics"> Calisthenics</label>
+            <br>
+            <label><input type="checkbox" name="sport" value="swimming"> Swimming</label>
+            <br>
+            <label><input type="checkbox" name="sport" value="bodybuilding"> Bodybuilding</label>
+            <br>
+            <label><input type="checkbox" name="sport" value="running"> Running</label>
+            <br>
+            <label><input type="checkbox" name="sport" value="football"> Football</label>
+            <br>
+            <label><input type="checkbox" name="sport" value="basketball"> Basketball</label>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Rate Our Website </legend>
+
+            <label>
+                Your Rating:
+                <select>
+                    <option disabled selected>Choose rating</option>
+                    <option>Bad</option>
+                    <option>Not Good</option>
+                    <option>Okay</option>
+                    <option>Good</option>
+                    <option>Excellent</option>
+                </select>
+            </label>
+            <br>
+            <br>
+
+            <label>Comments:</label>
+            <br>
+            <textarea rows="3" cols="40" placeholder="Write your feedback..."></textarea>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit" onclick="return checkSurvey();" id="surveyBtn">
+        </fieldset>
+
+    </form>
+
+</article>
+<script src="~/js/script.js"></script>

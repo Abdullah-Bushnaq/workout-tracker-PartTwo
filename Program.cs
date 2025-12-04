@@ -16,7 +16,14 @@ namespace workout_tracker
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options => {
+                options.IdleTimeout =
+                TimeSpan.FromSeconds(300); // 5 mins
+                options.Cookie.IsEssential = true;
+                options.Cookie.SameSite =
+                SameSiteMode.Strict;
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,6 +38,10 @@ namespace workout_tracker
             app.UseStaticFiles();
 
             app.UseRouting();
+
+
+            app.UseSession();
+
 
             app.UseAuthorization();
 

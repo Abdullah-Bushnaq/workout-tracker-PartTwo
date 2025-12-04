@@ -8,6 +8,9 @@ namespace workout_tracker.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.sessionId = HttpContext.Session.GetString("id");
+            ViewBag.sessionUserName =
+            HttpContext.Session.GetString("username");
             return View();
         }
 
@@ -16,6 +19,12 @@ namespace workout_tracker.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(UserModel user)
+        {
+            return View("LoginSuccess", user);
         }
 
 
@@ -27,20 +36,16 @@ namespace workout_tracker.Controllers
             return View();
         }
 
-
-
-
         // هنا بنستقبل البيانات اللي يرسلها المستخدم من صفحة تسجيل الدخول
         [HttpPost]// عشان لما يضغط المستخدم على زر تسجيل الدخول ويرسل البيانات
         public IActionResult Signup(UserModel user)
         {
             return View("SignupSuccess", user);
         }
-
-        [HttpPost]
-        public IActionResult Login(UserModel user)
+        public IActionResult ShowCookies()
         {
-            return View("LoginSuccess", user);
+            return View();
         }
+
     }
 }

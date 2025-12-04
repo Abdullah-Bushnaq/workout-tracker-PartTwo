@@ -61,10 +61,10 @@ namespace workout_tracker.Controllers
             return RedirectToAction("Index");
         }
 
-        // حذف تمرين
-        public IActionResult Delete(string title)
+        // حذف تمرين ناخذ الانديكس او الرقم البرايمري من الفيو الي اسمه انديكس 
+        public IActionResult Delete(int id)
         {
-            var workout = _db.Workouts.FirstOrDefault(x => x.Title == title);
+            var workout = _db.Workouts.FirstOrDefault(x => x.Id == id);
             if (workout != null)
             {
                 _db.Workouts.Remove(workout);

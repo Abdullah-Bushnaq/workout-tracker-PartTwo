@@ -1,3 +1,7 @@
+using global::workout_tracker.Data;
+using Microsoft.EntityFrameworkCore;
+using workout_tracker.Data;
+
 namespace workout_tracker
 {
     public class Program
@@ -5,6 +9,10 @@ namespace workout_tracker
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // —»ÿ ﬁ«⁄œ… «·»Ì«‰«  AppDb „⁄ SQLite
+            builder.Services.AddDbContext<AppDb>(options =>
+                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

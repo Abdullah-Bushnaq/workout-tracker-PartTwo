@@ -4,23 +4,10 @@
     ViewData["Title"] = "Login Success";
 }
 
-<div class="container mt-5 text-center">
-    <h2 class="text-success mb-4">Login Successful</h2>
+<h2>Login Successful</h2>
 
-    <p class="lead">
-        Welcome back,
-        @if (!string.IsNullOrEmpty(Model.FullName))
-        {
-            @Model.FullName
-        }
-        else
-        {
-            @Model.Email
-        }
-!
-    </p>
+<p>Your email: @Model.Email</p>
 
-    <p>Your email: @Model.Email</p>
-
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Back to Home</a>
-</div>
+<p>
+    <a href="/Home/Index">Back to Home</a>
+</p>

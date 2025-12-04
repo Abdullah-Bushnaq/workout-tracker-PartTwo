@@ -1,0 +1,32 @@
+﻿@model IEnumerable<workout_tracker.Models.WorkoutModel>
+
+<h2>Workout List</h2>
+
+<a href="/Workout/Create" class="btn btn-primary mb-3">Add New Workout</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Duration (min)</th>
+            <th>Calories</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Category</td>
+                <td>@item.Duration</td>
+                <td>@item.Calories</td>
+                <td>
+                    <a href="/Workout/Edit/@item.Id">Edit</a> |
+                    <a href="/Workout/Delete/@item.Id">Delete</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

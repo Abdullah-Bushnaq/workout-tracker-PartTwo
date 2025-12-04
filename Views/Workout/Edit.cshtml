@@ -1,0 +1,29 @@
+﻿@model workout_tracker.Models.WorkoutModel
+
+<h2>Edit Workout</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Title:</label><br />
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Category:</label><br />
+        <input asp-for="Category" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Duration (minutes):</label><br />
+        <input asp-for="Duration" type="number" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Calories:</label><br />
+        <input asp-for="Calories" type="number" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Save Changes</button>
+</form>

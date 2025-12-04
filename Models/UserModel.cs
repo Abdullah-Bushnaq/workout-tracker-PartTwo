@@ -2,12 +2,13 @@
 {
     public class UserModel
     {
-        public string FullName { get; set; }
+        //الفكرة انو من هنا تنضاف وتنسحب البيانات الخاصة بالمستخدم
+        public string FullName { get; set; } // الاسم الكامل
 
-        public string Email { get; set; }
+        public string Email { get; set; }// الايميل
 
-        public string Phone { get; set; }
+        public string Phone { get; set; }// رقم الجوال
 
-        public string Password { get; set; }
+        public string Password { get; set; }// كلمة المرور
     }
 }

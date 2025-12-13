@@ -40,9 +40,9 @@ namespace workout_tracker.Controllers
 
         // عشان يعدل البيانات حقت التمرين
         [HttpGet]
-        public IActionResult Edit(string title)
+        public IActionResult Edit(int id)
         {
-            var workout = _db.Workouts.FirstOrDefault(x => x.Title == title);
+            var workout = _db.Workouts.FirstOrDefault(x => x.Id == id);
             return View(workout);
         }
 
@@ -50,9 +50,10 @@ namespace workout_tracker.Controllers
         [HttpPost]
         public IActionResult Edit(WorkoutModel workout)
         {
-            var existing = _db.Workouts.FirstOrDefault(x => x.Title == workout.Title);
+            var existing = _db.Workouts.FirstOrDefault(x => x.Id == workout.Id);
             if (existing != null)
             {
+                existing.Title = workout.Title;
                 existing.Category = workout.Category;
                 existing.Duration = workout.Duration;
                 existing.Calories = workout.Calories;
